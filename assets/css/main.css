@@ -14,7 +14,7 @@ body {
 .sidenav {
     height: 100%;
     width: 200px;
-    position:absolute;
+    position: absolute;
     left: 0;
     background-color: #c9c9c9;
     overflow-x: hidden;
@@ -33,6 +33,7 @@ body {
     background-color: #ddd;
     color: black;
 }
+
 .active {
     background-color: #ddd;
     color: black;
@@ -111,26 +112,29 @@ label {
 }
 
 button {
-	background-color:#f5f5f5;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	border-radius:10px;
-	border:2px solid #bababa;
-	display:inline-block;
-	cursor:pointer;
-	color:#595959;
-	font-family:Arial;
-	font-size:15px;
-	padding:5px 17px;
-	text-decoration:none;
+    background-color: #f5f5f5;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px solid #bababa;
+    display: inline-block;
+    cursor: pointer;
+    color: #595959;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 5px 17px;
+    text-decoration: none;
 }
+
 button:hover {
-	background-color:#d9d9d9;
+    background-color: #d9d9d9;
 }
+
 button:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
+
 /* Clear floats after the columns */
 
 .row:after {
@@ -138,11 +142,13 @@ button:active {
     display: table;
     clear: both;
 }
-hr{
+
+hr {
     margin: 15px 0px 15px 0px;
     width: 450px;
     border: 2px solid #c9c9c9;
 }
+
 .tabcontent {
-    display:none;
+    display: none;
 }

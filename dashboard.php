@@ -12,13 +12,13 @@
     <div class="topbar">
         <img class="logo" src="assets/img/dhl_logo.png" alt="DHL Logo" />
         <div class="sessioninfo">
-            <p class="sessioninfotitle">Logged in as:&nbsp;<?php echo "<span class='sessioninfodata'>LX2</span>"?></p>
-            <p class="sessioninfotitle">Facility Name:&nbsp;<?php echo "<span class='sessioninfodata'>LIS</span>"?></p>
-            <p class="sessioninfotitle">Workspace Name:&nbsp;<?php echo "<span class='sessioninfodata'>MGCOST</span>"?>&nbsp;&nbsp;<span class="sessioninfodata"><a href="#">Logout</a></span></p>
-            
-
+            <p class="sessioninfotitle">Logged in as:&nbsp;
+                <?php echo "<span class='sessioninfodata'>LX2</span>"?></p>
+            <p class="sessioninfotitle">Facility Name:&nbsp;
+                <?php echo "<span class='sessioninfodata'>LIS</span>"?></p>
+            <p class="sessioninfotitle">Workspace Name:&nbsp;
+                <?php echo "<span class='sessioninfodata'>MGCOST</span>"?>&nbsp;&nbsp;<span class="sessioninfodata"><a href="#">Logout</a></span></p>
         </div>
-        
     </div>
     <div class="sidenav">
         <a href="#" class="tablinks active" onclick="openTab(event, 'convertShipping')">»&nbsp;Converter Envio</a>
@@ -45,7 +45,8 @@
             <?php include_once( "templates/containers/logConversions.php"); ?>
         </div>
     </div>
-    
+
 </body>
 <script src="assets/js/main.js"></script>
+
 </html>
