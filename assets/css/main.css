@@ -7,7 +7,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-y: hidden; 
+    overflow-y: hidden;
 }
 
 /* Style the side navigation */
@@ -149,5 +149,11 @@ hr {
 .tabcontent {
     display: none;
 }
-td{ text-align: center; }
-td.child{text-align: left;}
+
+td {
+    text-align: center;
+}
+
+td.child {
+    text-align: left;
+}
