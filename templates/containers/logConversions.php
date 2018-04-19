@@ -3,7 +3,7 @@
     <thead>
         <tr>
             <th>Login</th>
-            <th>Worskspace</th>
+            <th class="none">Worskspace</th>
             <th>Action</th>
             <th>Express AWB</th>
             <th>Express PID</th>
