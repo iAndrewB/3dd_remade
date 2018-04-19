@@ -1,7 +1,7 @@
 <!-- START getConversions container -->
-<table id="conversionsTable" class="table">
+<table id="conversionsTable">
     <thead>
-        <tr>
+        <tr class="tableColumns">
             <th>Login</th>
             <th class="none">Worskspace</th>
             <th>Express AWB</th>

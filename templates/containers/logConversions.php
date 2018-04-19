@@ -1,7 +1,7 @@
 <!-- START logConversions container -->
-<table id="logTable" class="table">
+<table id="logTable">
     <thead>
-        <tr>
+        <tr class="tableColumns">
             <th>Login</th>
             <th class="none">Worskspace</th>
             <th>Action</th>
