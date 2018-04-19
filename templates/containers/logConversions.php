@@ -1,5 +1,5 @@
 <!-- START logConversions container -->
-<table id="actionsTable" class="table">
+<table id="logTable" class="table">
     <thead>
         <tr>
             <th>Login</th>
