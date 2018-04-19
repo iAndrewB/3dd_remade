@@ -37,13 +37,14 @@ $(document).ready(function () {
     $('#shipment_PieceIDs').DataTable({
         responsive: true,
         order: [[1, "asc"]],
-        scrollY: "10vh",
+        scrollY: "110px",
         scrollCollapse: true,
         paging: false,
         select: 'multi',
         searching: false,
         info: false,
         columnDefs: [{
+            width: '5%',
             orderable: false,
             className: 'select-checkbox',
             targets: 0
