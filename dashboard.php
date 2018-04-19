@@ -31,13 +31,13 @@
         </div>
 
         <div class="content">
-            <div id="convertShipping" class="tabcontent" style="display: block;">
+            <div id="convertShipping" class="tabcontent clear" style="display: block;">
                 <?php include_once( "templates/containers/convertShipping.php"); ?>
             </div>
-            <div id="deleteConversion" class="tabcontent">
+            <div id="deleteConversion" class="tabcontent clear">
                 <?php include_once( "templates/containers/deleteConversion.php"); ?>
             </div>
-            <div id="updateConversion" class="tabcontent">
+            <div id="updateConversion" class="tabcontent clear">
                 <?php include_once( "templates/containers/updateConversion.php"); ?>
             </div>
             <div id="getConversions" class="tabcontent">
