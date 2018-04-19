@@ -34,6 +34,22 @@ $(document).ready(function () {
         paging: false,
         select: 'single',
     });
+    $('#shipment_PieceIDs').DataTable({
+        responsive: true,
+        order: [[1, "asc"]],
+        scrollY: "10vh",
+        scrollCollapse: true,
+        paging: false,
+        select: 'multi',
+        searching: false,
+        info: false,
+        columnDefs: [{
+            orderable: false,
+            className: 'select-checkbox',
+            targets: 0
+        }],
+    });
+
     // On container change
     $("a.tablinks").on("click", function (e) {
         //Resize table columns
@@ -44,4 +60,13 @@ $(document).ready(function () {
         //Clear inputs
         $('input').val('');
     });
+    $('#shipment_Type').on('change', function () {
+        if ($('#shipment_Type').val() == 'Monopeça') {
+            $('#convert_Monopiece').show();
+            $('#convert_Multipiece').hide();
+        } else {
+            $('#convert_Monopiece').hide();
+            $('#convert_Multipiece').show();
+        }
+    })
 });
