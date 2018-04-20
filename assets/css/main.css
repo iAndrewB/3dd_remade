@@ -103,6 +103,7 @@ label {
     margin-top: 6px;
     text-align: right;
     font-size: 14px;
+    font-weight: bold;
 }
 
 .col-input {
@@ -178,4 +179,9 @@ table {
 input[type=search] {
     border: 1px solid black;
     margin-right: -5px;
+}
+
+th.control.sorting_disabled, th.select-checkbox.sorting_disabled {
+    background-color: white;
+    border-color: white;
 }

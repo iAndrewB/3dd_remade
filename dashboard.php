@@ -24,8 +24,8 @@
         </div>
         <div class="sidenav">
             <a href="#" class="tablinks active" onclick="openTab(event, 'convertShipping')">»&nbsp;Converter Envio</a>
-            <a href="#" class="tablinks" onclick="openTab(event, 'deleteConversion')">»&nbsp;Apagar Conversão</a>
-            <a href="#" class="tablinks" onclick="openTab(event, 'updateConversion')">»&nbsp;Atualizar Conversão</a>
+            <a href="#" class="tablinks" onclick="openTab(event, 'deleteConversion')">»&nbsp;Eliminar Conversão</a>
+            <!--<a href="#" class="tablinks" onclick="openTab(event, 'updateConversion')">»&nbsp;Atualizar Conversão</a>-->
             <a href="#" class="tablinks" onclick="openTab(event, 'getConversions')">»&nbsp;Lista de Conversões</a>
             <a href="#" class="tablinks" onclick="openTab(event, 'logConversions')">»&nbsp;Log de Atividade</a>
         </div>
@@ -37,9 +37,11 @@
             <div id="deleteConversion" class="tabcontent clear">
                 <?php include_once( "templates/containers/deleteConversion.php"); ?>
             </div>
+            <!--
             <div id="updateConversion" class="tabcontent clear">
-                <?php include_once( "templates/containers/updateConversion.php"); ?>
+                <?php //include_once( "templates/containers/updateConversion.php"); ?>
             </div>
+            -->
             <div id="getConversions" class="tabcontent">
                 <?php include_once( "templates/containers/getConversions.php"); ?>
             </div>
@@ -51,6 +53,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.10.16/kt-2.3.2/r-2.2.1/sc-1.4.4/sl-1.2.5/datatables.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/tables.js"></script>
 </body>
 
 </html>

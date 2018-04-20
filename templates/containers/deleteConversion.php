@@ -1,21 +1,21 @@
 <!-- START deleteConversion container -->
 <form>
     <div class="row">
-        <h2>Procurar Envio</h2>
+        <h2>Eliminar Conversão</h2>
     </div>
     <div class="row">
         <div class="col-label">
-            <label for="shipment_pieceID">Número de Peça*: </label>
+            <label for="delete_pieceID">Número de Peça*: </label>
         </div>
         <div class="col-input">
-            <input type="text" id="shipment_pieceID" placeholder="Ex: JJD1020202102192192929">
+            <input type="text" id="delete_pieceID" placeholder="Ex: JJD1020202102192192929">
         </div>
     </div>
     <div class="row">
         <div class="col-label">
         </div>
         <div class="col-input">
-            <button type='button' class='search_PieceID' style="float: right;">Procurar</button>
+            <button type='button' class='search_pieceID' style="float: right;">Procurar</button>
         </div>
     </div>
 </form>
@@ -82,4 +82,5 @@
         </div>
     </div>
 </form>
+
 <!-- END deleteConversion container -->

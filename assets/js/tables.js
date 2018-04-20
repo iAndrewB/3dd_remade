@@ -37,7 +37,7 @@ $(document).ready(function () {
             targets: 0
         }],
     });
-    $('#convert_PieceIDs').DataTable({
+    $('#convertawb_PieceIDs').DataTable({
         responsive: true,
         order: [[1, "asc"]],
         scrollY: "110px",
