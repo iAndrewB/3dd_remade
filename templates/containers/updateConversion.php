@@ -8,7 +8,7 @@
             <label for="shipment_pieceID">Número de Peça*: </label>
         </div>
         <div class="col-input">
-            <input type="text" id="shipment_pieceID" placeholder=" Ex: JJD1020202102192192929">
+            <input type="text" id="shipment_pieceID" placeholder="Ex: JJD1020202102192192929">
         </div>
     </div>
     <div class="row">
