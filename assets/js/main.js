@@ -1,3 +1,16 @@
+
+function reloadTables() {
+    // Resize table columns - Repeated function since DataTables api requires it.
+    $.fn.dataTable.tables({
+        visible: true,
+        api: true
+    }).columns.adjust();
+    $.fn.dataTable.tables({
+        visible: true,
+        api: true
+    }).columns.adjust();
+}
+
 function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -14,97 +27,42 @@ function openTab(evt, tabName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-    // Resize table columns - Repeated function since DataTables api requires it.
-    $.fn.dataTable.tables({
-        visible: true,
-        api: true
-    }).columns.adjust();
-    $.fn.dataTable.tables({
-        visible: true,
-        api: true
-    }).columns.adjust();
+    reloadTables();
     // Clear inputs
     $('input').val('');
 }
-$(document).ready(function () {
-    // Conversions table DataTables initialize
-    $('#conversionsTable').DataTable({
-        order: [[7, "desc"]],
-        scrollY: "60vh",
-        scrollCollapse: true,
-        paging: false,
-        select: 'single',
-        responsive: {
-            details: {
-                type: 'column'
-            }
+
+function changeShipmentType() {
+    if ($('#shipment_Type').val() == 'Monopeça') {
+        $('#convert_Monopiece').show();
+        $('#convert_Multipiece').hide();
+    } else {
+        $('#convert_Monopiece').hide();
+        $('#convert_Multipiece').show();
+    }
+}
+
+function getShipmentInfo() {
+    $.ajax({
+        url: "assets/php/soaprequest.php",
+        type: "POST",
+        data: {
+            pieceID: $("#shipment_pieceID").val()
         },
-        columnDefs: [{
-            width: '5px',
-            className: 'control',
-            orderable: false,
-            targets: 0
-        }],
-    });
-    // Log table DataTables initialize
-    $('#logTable').DataTable({
-        order: [[8, "desc"]],
-        scrollY: "60vh",
-        scrollCollapse: true,
-        paging: false,
-        select: 'single',
-        responsive: {
-            details: {
-                type: 'column'
-            }
+        success: function (response) {
+            $('#shipment_dataAddress').val(response)
         },
-        columnDefs: [{
-            width: '5px',
-            className: 'control',
-            orderable: false,
-            targets: 0
-        }],
-    });
-    $('#shipment_PieceIDs').DataTable({
-        responsive: true,
-        order: [[1, "asc"]],
-        scrollY: "110px",
-        scrollCollapse: true,
-        paging: false,
-        select: 'multi',
-        searching: false,
-        info: false,
-        columnDefs: [{
-            width: '5px',
-            orderable: false,
-            className: 'select-checkbox',
-            targets: 0
-        }],
-    });
-    $('#shipment_Type').on('change', function () {
-        if ($('#shipment_Type').val() == 'Monopeça') {
-            $('#convert_Monopiece').show();
-            $('#convert_Multipiece').hide();
-        } else {
-            $('#convert_Monopiece').hide();
-            $('#convert_Multipiece').show();
+        error: function (xhr, status, error) {
+
         }
     });
-    $('.search_PieceID').on("click", function () {
-        console.log("hello???");
-        $.ajax({
-            url: "assets/php/soaprequest.php",
-            type: "POST",
-            data: {
-                pieceID: $("#shipment_pieceID").val()
-            },
-            success: function (response) {
-                console.log(response);
-                $('#shipment_dataAddress').val(response)
-            },
-            error: function (xhr, status, error) {
+}
+function convertShipment() {
+    
+}
 
-            }
-        });
-    });
+$(document).ready(function () {
+    $("#shipment_Type").click(changeShipmentType);
+    $(".search_PieceID").click(getShipmentInfo);
+
 });
