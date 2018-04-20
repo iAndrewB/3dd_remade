@@ -15,8 +15,14 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
     // Resize table columns - Repeated function since DataTables api requires it.
-    $.fn.dataTable.tables({visible: true,api: true}).columns.adjust();
-    $.fn.dataTable.tables({visible: true,api: true}).columns.adjust();
+    $.fn.dataTable.tables({
+        visible: true,
+        api: true
+    }).columns.adjust();
+    $.fn.dataTable.tables({
+        visible: true,
+        api: true
+    }).columns.adjust();
     // Clear inputs
     $('input').val('');
 }
@@ -75,7 +81,6 @@ $(document).ready(function () {
             targets: 0
         }],
     });
-
     $('#shipment_Type').on('change', function () {
         if ($('#shipment_Type').val() == 'Monopeça') {
             $('#convert_Monopiece').show();
@@ -84,5 +89,22 @@ $(document).ready(function () {
             $('#convert_Monopiece').hide();
             $('#convert_Multipiece').show();
         }
-    })
+    });
+    $('.search_PieceID').on("click", function () {
+        console.log("hello???");
+        $.ajax({
+            url: "assets/php/soaprequest.php",
+            type: "POST",
+            data: {
+                pieceID: $("#shipment_pieceID").val()
+            },
+            success: function (response) {
+                console.log(response);
+                $('#shipment_dataAddress').val(response)
+            },
+            error: function (xhr, status, error) {
+
+            }
+        });
+    });
 });
