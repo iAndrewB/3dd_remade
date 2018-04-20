@@ -1,5 +1,5 @@
 
-function reloadTables() {
+function resizeTablesColumns() {
     // Resize table columns - Repeated function since DataTables api requires it.
     $.fn.dataTable.tables({
         visible: true,
@@ -27,18 +27,19 @@ function openTab(evt, tabName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-    reloadTables();
+    resizeTablesColumns();
     // Clear inputs
     $('input').val('');
 }
 
 function changeShipmentType() {
-    if ($('#shipment_Type').val() == 'Monopeça') {
-        $('#convert_Monopiece').show();
-        $('#convert_Multipiece').hide();
-    } else {
+    if ($('#shipment_Type').val() == 'Multipeça') {
         $('#convert_Monopiece').hide();
         $('#convert_Multipiece').show();
+        resizeTablesColumns();
+    } else {
+        $('#convert_Monopiece').show();
+        $('#convert_Multipiece').hide();
     }
 }
 
@@ -47,18 +48,15 @@ function getShipmentInfo() {
         url: "assets/php/soaprequest.php",
         type: "POST",
         data: {
-            pieceID: $("#shipment_pieceID").val()
+            searchPieceID: $("#convert_pieceID").val()
         },
         success: function (response) {
-            $('#shipment_dataAddress').val(response)
+            $('#convert_dataAddress').val(response)
         },
         error: function (xhr, status, error) {
 
         }
     });
-}
-function convertShipment() {
-    
 }
 
 $(document).ready(function () {

@@ -1,11 +1,11 @@
 <!-- START convertShipping container -->
 <h2>Converter Envio - 
     <select id="shipment_Type">
-        <option>Multipeça</option>
         <option>Monopeça</option>
+        <option>Multipeça</option>
     </select>
 </h2>
-<form id="convert_Monopiece" style="display: none;">
+<form id="convert_Monopiece">
     <div class="row">
         <div class="col-label">
             <label for="convert_pieceID">Número de Peça*: </label>
@@ -22,7 +22,7 @@
         </div>
     </div>
 </form>
-<form id="convert_Multipiece">
+<form id="convert_Multipiece" style="display: none;">
     <div class="row">
         <div class="col-label">
             <label for="shipment_WayBill">Carta de Porte*: </label>
