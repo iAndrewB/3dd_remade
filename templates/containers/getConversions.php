@@ -1,5 +1,5 @@
 <!-- START getConversions container -->
-<table id="conversionsTable" cellspacing="0" width="100%">
+<table id="conversionsTable">
     <thead>
         <tr class="tableColumns">
             <th></th>

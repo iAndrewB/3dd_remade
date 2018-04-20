@@ -1,5 +1,5 @@
 <!-- START logConversions container -->
-<table id="logTable" cellspacing="0" width="100%">
+<table id="logTable">
     <thead>
         <tr class="tableColumns">
             <th></th>
