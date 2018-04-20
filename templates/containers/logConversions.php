@@ -2,6 +2,7 @@
 <table id="logTable">
     <thead>
         <tr class="tableColumns">
+            <th></th>
             <th>Login</th>
             <th class="none">Worskspace</th>
             <th>Action</th>
@@ -14,6 +15,7 @@
     </thead>
     <tbody>
         <tr>
+            <td></td>
             <td>LX2</td>
             <td>MGCOST</td>
             <td>Convert</td>

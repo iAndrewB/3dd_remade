@@ -1,14 +1,16 @@
 function openTab(evt, tabName) {
     // Declare all variables
-    var i, tabcontent, tablinks;
+    var i;
+    var tabcontent;
+    var tablinks;
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
+    for (i = 0; i < tabcontent.length; i += 1) {
         tabcontent[i].style.display = "none";
     }
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
+    for (i = 0; i < tablinks.length; i += 1) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     // Show the current tab, and add an "active" class to the button that opened the tab
@@ -17,36 +19,56 @@ function openTab(evt, tabName) {
 }
 $(document).ready(function () {
     // Conversions table DataTables initialize
-    $('#conversionsTable').DataTable({
-        responsive: true,
-        order: [[6, "desc"]],
-        scrollY: "60vh",
-        scrollCollapse: true,
-        paging: false,
-        select: 'single',
-    });
-    // Log table DataTables initialize
-    $('#logTable').DataTable({
-        responsive: true,
+    $("#conversionsTable").DataTable({
         order: [[7, "desc"]],
         scrollY: "60vh",
         scrollCollapse: true,
         paging: false,
-        select: 'single',
+        select: "single",
+        responsive: {
+            details: {
+                type: "column"
+            }
+        },
+        columnDefs: [{
+            width: "5px",
+            className: "control",
+            orderable: false,
+            targets: 0
+        }],
     });
-    $('#shipment_PieceIDs').DataTable({
+    // Log table DataTables initialize
+    $("#logTable").DataTable({
+        order: [[8, "desc"]],
+        scrollY: "60vh",
+        scrollCollapse: true,
+        paging: false,
+        select: "single",
+        responsive: {
+            details: {
+                type: "column"
+            }
+        },
+        columnDefs: [{
+            width: "5px",
+            className: "control",
+            orderable: false,
+            targets: 0
+        }],
+    });
+    $("#shipment_PieceIDs").DataTable({
         responsive: true,
         order: [[1, "asc"]],
         scrollY: "110px",
         scrollCollapse: true,
         paging: false,
-        select: 'multi',
+        select: "multi",
         searching: false,
         info: false,
         columnDefs: [{
-            width: '5%',
+            width: "5px",
             orderable: false,
-            className: 'select-checkbox',
+            className: "select-checkbox",
             targets: 0
         }],
     });
@@ -59,15 +81,15 @@ $(document).ready(function () {
             api: true
         }).columns.adjust();
         //Clear inputs
-        $('input').val('');
+        $("input").val("");
     });
-    $('#shipment_Type').on('change', function () {
-        if ($('#shipment_Type').val() == 'Monopeça') {
-            $('#convert_Monopiece').show();
-            $('#convert_Multipiece').hide();
+    $("#shipment_Type").on("change", function () {
+        if ($("#shipment_Type").val() == "Monopeça") {
+            $("#convert_Monopiece").show();
+            $("#convert_Multipiece").hide();
         } else {
-            $('#convert_Monopiece').hide();
-            $('#convert_Multipiece').show();
+            $("#convert_Monopiece").hide();
+            $("#convert_Multipiece").show();
         }
     })
 });

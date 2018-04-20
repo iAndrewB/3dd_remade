@@ -1,10 +1,3 @@
-:root {
-    --dhlcolor1: #ffcd00;
-    --dhlcolor2: #ba0c2f;
-    --dhlcolor3: #c9c9c9;
-    --dhlcolorhover4: #ddd;
-}
-
 /* Page main styles */
 
 * {
@@ -14,7 +7,6 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-y: hidden;
 }
 
 /* Style the side navigation */
@@ -154,8 +146,8 @@ hr {
 
 /* Tables */
 
-th {
-    text-align: left;
+thead, tbody {
+    text-align: center;
 }
 
 thead {
@@ -174,4 +166,8 @@ td {
 
 table {
     border-right: 1px solid black;
+}
+input[type=search]{
+    border: 1px solid black;
+    margin-right: -5px;
 }

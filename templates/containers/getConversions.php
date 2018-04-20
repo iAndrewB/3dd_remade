@@ -2,6 +2,7 @@
 <table id="conversionsTable">
     <thead>
         <tr class="tableColumns">
+            <th></th>
             <th>Login</th>
             <th class="none">Worskspace</th>
             <th>Express AWB</th>
@@ -13,6 +14,7 @@
     </thead>
     <tbody>
         <tr>
+            <td></td>
             <td>LX2</td>
             <td>MGCOST</td>
             <td>8443246792</td>
