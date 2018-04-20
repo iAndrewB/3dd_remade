@@ -1,95 +1,88 @@
 function openTab(evt, tabName) {
     // Declare all variables
-    var i;
-    var tabcontent;
-    var tablinks;
+    var i, tabcontent, tablinks;
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i += 1) {
+    for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i += 1) {
+    for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+    // Resize table columns - Repeated function since DataTables api requires it.
+    $.fn.dataTable.tables({visible: true,api: true}).columns.adjust();
+    $.fn.dataTable.tables({visible: true,api: true}).columns.adjust();
+    // Clear inputs
+    $('input').val('');
 }
 $(document).ready(function () {
     // Conversions table DataTables initialize
-    $("#conversionsTable").DataTable({
+    $('#conversionsTable').DataTable({
         order: [[7, "desc"]],
         scrollY: "60vh",
         scrollCollapse: true,
         paging: false,
-        select: "single",
+        select: 'single',
         responsive: {
             details: {
-                type: "column"
+                type: 'column'
             }
         },
         columnDefs: [{
-            width: "5px",
-            className: "control",
+            width: '5px',
+            className: 'control',
             orderable: false,
             targets: 0
         }],
     });
     // Log table DataTables initialize
-    $("#logTable").DataTable({
+    $('#logTable').DataTable({
         order: [[8, "desc"]],
         scrollY: "60vh",
         scrollCollapse: true,
         paging: false,
-        select: "single",
+        select: 'single',
         responsive: {
             details: {
-                type: "column"
+                type: 'column'
             }
         },
         columnDefs: [{
-            width: "5px",
-            className: "control",
+            width: '5px',
+            className: 'control',
             orderable: false,
             targets: 0
         }],
     });
-    $("#shipment_PieceIDs").DataTable({
+    $('#shipment_PieceIDs').DataTable({
         responsive: true,
         order: [[1, "asc"]],
         scrollY: "110px",
         scrollCollapse: true,
         paging: false,
-        select: "multi",
+        select: 'multi',
         searching: false,
         info: false,
         columnDefs: [{
-            width: "5px",
+            width: '5px',
             orderable: false,
-            className: "select-checkbox",
+            className: 'select-checkbox',
             targets: 0
         }],
     });
 
-    // On container change
-    $("a.tablinks").on("click", function (e) {
-        //Resize table columns
-        $.fn.dataTable.tables({
-            visible: true,
-            api: true
-        }).columns.adjust();
-        //Clear inputs
-        $("input").val("");
-    });
-    $("#shipment_Type").on("change", function () {
-        if ($("#shipment_Type").val() == "Monopeça") {
-            $("#convert_Monopiece").show();
-            $("#convert_Multipiece").hide();
+    $('#shipment_Type').on('change', function () {
+        if ($('#shipment_Type').val() == 'Monopeça') {
+            $('#convert_Monopiece').show();
+            $('#convert_Multipiece').hide();
         } else {
-            $("#convert_Monopiece").hide();
-            $("#convert_Multipiece").show();
+            $('#convert_Monopiece').hide();
+            $('#convert_Multipiece').show();
         }
     })
 });
