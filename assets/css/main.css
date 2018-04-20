@@ -9,15 +9,19 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h2 {
+    margin: 10px 0px 5px 0px;
+}
+
 /* Style the side navigation */
 
 .sidenav {
-    height: 100%;
+    /* Height calc for sidenav based on 100% viewport - 80px of the topbar height */
+    height: calc(100% - 80px);
     width: 200px;
     position: absolute;
-    left: 0;
     background-color: #c9c9c9;
-    overflow-x: hidden;
+    overflow-y: hidden;
     border-right: 10px solid #ba0c2f;
 }
 
@@ -83,8 +87,9 @@ select,
 textarea {
     margin-top: 3px;
     width: 100%;
-    padding: 2.5px 0px 2.5px 0;
+    padding: 2.5px 0px 2.5px 5px;
     border: 1px solid black;
+    border-radius: 5px;
 }
 
 label {
@@ -108,8 +113,8 @@ label {
 
 button {
     background-color: #ddd;
-    border-radius: 10px;
-    border: 2px solid black;
+    border-radius: 5px;
+    border: 1px solid black;
     display: inline-block;
     color: black;
     font-size: 14px;
@@ -146,7 +151,8 @@ hr {
 
 /* Tables */
 
-thead, tbody {
+thead,
+tbody {
     text-align: center;
 }
 
@@ -158,6 +164,7 @@ th,
 td {
     border: 1px solid black;
     border-right: 0px;
+    white-space: nowrap;
 }
 
 #shipment_Type {
@@ -167,7 +174,8 @@ td {
 table {
     border-right: 1px solid black;
 }
-input[type=search]{
+
+input[type=search] {
     border: 1px solid black;
     margin-right: -5px;
 }
